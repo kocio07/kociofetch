@@ -38,4 +38,24 @@ def pobierz_ram():
             total = int(linia.split()[1]) 
         if linia.startswith("MemAvailable"):
             avalible = int(linia.split()[1])
+    plik.close()
+    uzyty_gb = (total - avalible) / 1024 /1024
+    total_gb = total / 1024 / 1024
+    return f"{uzyty_gb:.1f}GB / {total_gb:.1f}GB"
     
+ def pobierz_cpu():
+    plik = open("/proc/cpuinfo", "r")
+    for linia in plik:
+        if linia.startswith("model name"):
+            plik.close()
+            return linia.split(":")[1].strip()
+    plik.close()
+    return "Nieznany CPU"
+
+def main():
+    distro = pobierz_distro()
+    kernel = pobierz_kernel()
+    uptime = pobierz_uptime()
+    ram = pobierz_ram()
+    cpu = pobierz_cpu()
+    shell = pobierz_shell()
