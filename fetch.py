@@ -34,6 +34,7 @@ logo = """
 
 """
 linie_logo = logo.strip("\n").split("\n")
+szerekosc = max(len(linia) for linia in linie_logo) + 2
 
 
 def pobierz_distro():
@@ -113,11 +114,11 @@ def main():
 		f"{purple}cpu: {reset} {cpu}",
 		f"{cyan}shell: {reset} {shell}",
 	]
-
+	
 	for i in range(max(len(linie_logo), len(info))):
 		lewa = linie_logo[i] if i < len(linie_logo) else ""
 		prawa = info[i] if i < len(info) else ""
-		print(f"{lewa:<20}{prawa}")
+		print(f"{lewa:<{szerekosc}}{prawa}")
 
 main()
 
