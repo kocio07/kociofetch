@@ -63,6 +63,14 @@ def pobierz_cpu():
 	plik.close()
 	return "Nieznany CPU"
 
+def pobierz_baterie():
+	plik = open("/proc/cpuinfo", "r")
+
+
+
+
+
+
 def main():
 	distro = pobierz_distro()
 	kernel = pobierz_kernel()
@@ -78,7 +86,8 @@ def main():
 		f"{purple}cpu: {reset} {cpu}",
 		f"{cyan}shell: {reset} {shell}",
 	]
-	print(info)
+	for linia in info:
+		print(linia)
 
 
 
