@@ -70,13 +70,15 @@ def main():
 	ram = pobierz_ram()
 	cpu = pobierz_cpu()
 	shell = pobierz_shell()
-
-	print(f"{blue}distro:{reset} {distro}")
-	print(f"kernel: {kernel}")
-	print(f"uptime: {uptime}")
-	print(f"ram: {ram}")
-	print(f"cpu: {cpu}")
-	print(f"shell: {shell}")
+	info = [
+		f"{blue}distro:{reset} {distro}",
+		f"{red}kernel:{reset} {kernel}",
+		f"{green}uptime:{reset} {uptime}",
+		f"{yellow}ram:{reset} {ram}",
+		f"{purple}cpu: {reset} {cpu}",
+		f"{cyan}shell: {reset} {shell}",
+	]
+	print(info)
 
 
 
