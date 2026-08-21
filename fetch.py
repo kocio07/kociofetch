@@ -113,10 +113,13 @@ def main():
 		f"{purple}cpu: {reset} {cpu}",
 		f"{cyan}shell: {reset} {shell}",
 	]
-	for linia in info:
-		print(linia)
 
+	for i in range(max(len(linie_logo), len(info))):
+		lewa = linie_logo[i] if i < len(linie_logo) else ""
+		prawa = info[i] if i < len(info) else ""
+		print(f"{lewa:<20}{prawa}")
 
+main()
 
 
 
