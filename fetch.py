@@ -1,3 +1,9 @@
+blue = "\033[34m"
+reset = "\033[0m"
+
+
+
+
 def pobierz_distro():
 	plik = open("/etc/os-release", "r")
 	for linia in plik:
@@ -60,12 +66,12 @@ def main():
 	cpu = pobierz_cpu()
 	shell = pobierz_shell()
 
-	print(f"distro: {distro}")
+	print(f"{blue}distro:{reset} {distro}")
 	print(f"kernel: {kernel}")
-	print(f"uptime {uptime}")
-	print(f"ram {ram}")
-	print(f"cpu {cpu}")
-	print(f"shell {shell}")
+	print(f"uptime: {uptime}")
+	print(f"ram: {ram}")
+	print(f"cpu: {cpu}")
+	print(f"shell: {shell}")
 
 
 
